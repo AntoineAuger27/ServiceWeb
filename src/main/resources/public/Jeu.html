@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Jeu du pendu</title>
+<link rel=Stylesheet href=Jeu.css>
+<script>
+var motrecherche;			
+var now=new Date();
+var tableauMot=new Array();
+var liste=new Array();
+var tailleMot;
+var coupsManques=0;
+var lettresTrouvees=0;
+var fini=false;
+			
+liste[0]="SOURIS";
+liste[1]="TROUSSE";
+liste[2]="POMPIER";
+liste[3]="CLAVIER";
+liste[4]="VELO";
+liste[5]="ORDINATEUR";
+liste[6]="ORANGE";
+liste[7]="CHATEAU";
+liste[8]="MOTO";
+liste[9]="TABLE";
+liste[10]="FLEUR";
+motrecherche=liste[now.getSeconds() % liste.length];
+tailleMot=motrecherche.length;
+				
+function changeCouleur(element,couleur){
+	element.style.backgroundColor=couleur;
+}
+				
+function essai(element){
+var e = document.getElementById("compteur");
+if(element.style.backgroundColor=="lightGreen" || element.style.backgroundColor=="Red" ||fini) return;
+var lettre=element.innerHTML;
+var trouve=false;
+for(var i=0; i<tailleMot; i++) {
+	if(tableauMot[i].innerHTML==lettre) {
+		changeCouleur(element,"lightGreen");
+		tableauMot[i].style.visibility='visible';
+		trouve=true;
+		lettresTrouvees++;
+		}
+}
+if(!trouve){
+	changeCouleur(element,"Red");
+	coupsManques++;
+	var c = 11-coupsManques;
+	e.innerHTML = "Il reste " + c + " tentatives.";
+	if(coupsManques==11){
+		e.innerHTML = "Il ne reste plus de tentatives. <br>Vous avez perdu !";
+		for(var i=0; i<tailleMot; i++) tableauMot[i].style.visibility='visible';
+		fini=true;
+	}
+}
+
+if(lettresTrouvees==tailleMot){
+	e.innerHTML = "F�licitations. Vous avez d�couvert le mot !";
+	fini=true;
+}
+}
+
+function Nuit(){
+document.body.style.backgroundColor="#202020";
+document.body.style.color="white";
+}
+
+function Jour(){
+document.body.style.backgroundColor="white";
+document.body.style.color="black";
+}
+</script>
+</head>
+<body>
+<div id="page">
+<h1>
+    <img src="Jeu.jpeg">
+    <button onclick="Jour()">Jour</button>
+    <button onclick="Nuit()">Nuit</button>
+</h1>
+<a class="lien" href="javascript:location.reload();">Faire une nouvelle partie</a>
+<br>
+<a class="lien" href="Accueil.html">Retourner à l'Accueil</a>
+<h2 id="compteur">Vous avez 11 tentatives pour trouver le mot secret. <br>Bonne chance!</h2>
+
+<table id="motrecherche">
+<tr>
+<script language="javascript">
+for(var i=0; i<tailleMot; i++) document.write("<td> <p id=\""+i+"\">"+motrecherche.charAt(i)+"</p></td>");
+</script>
+</tr>
+</table>
+
+<table id="clavier">
+<tr>
+<td onclick="essai(this);" >A</td>
+<td onclick="essai(this);" >B</td>
+<td onclick="essai(this);" >C</td>
+<td onclick="essai(this);" >D</td>
+<td onclick="essai(this);" >E</td>
+<td onclick="essai(this);" >F</td>
+</tr>
+<tr>
+<td onclick="essai(this);" >G</td>
+<td onclick="essai(this);" >H</td>
+<td onclick="essai(this);" >I</td>
+<td onclick="essai(this);" >J</td>
+<td onclick="essai(this);" >K</td>
+<td onclick="essai(this);" >L</td>
+</tr>
+<tr>
+<td onclick="essai(this);" >M</td>
+<td onclick="essai(this);" >N</td>
+<td onclick="essai(this);" >O</td>
+<td onclick="essai(this);" >P</td>
+<td onclick="essai(this);" >Q</td>
+<td onclick="essai(this);" >R</td>
+</tr>
+<tr>
+<td onclick="essai(this);" >S</td>
+<td onclick="essai(this);" >T</td>
+<td onclick="essai(this);" >U</td>
+<td onclick="essai(this);" >V</td>
+<td onclick="essai(this);" >W</td>
+<td onclick="essai(this);" >X</td>
+</tr>
+<tr>
+<td onclick="essai(this);" >Y</td>
+<td onclick="essai(this);" >Z</td>
+</tr>
+</table>
+<br>	
+<script>
+for(var i=0; i<tailleMot; i++) tableauMot[i]=document.getElementById(i);
+</script>
+</div>
+</body>
+</html>

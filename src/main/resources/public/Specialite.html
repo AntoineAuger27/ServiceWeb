@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel=Stylesheet href=Application.css>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Administration</title>
+</head>
+<body>
+<div id="page">
+    <h1>
+        <img src="Accueil.png">
+        <button onclick="Jour()">Jour</button>
+        <button onclick="Nuit()">Nuit</button>
+    </h1>
+    <h1>Site de l'administration</h1>
+    <a class="lien" href="Accueil.html">Retourner à l'Accueil</a><br>
+    <div id="navigation">
+        <h2>Gestion des specialites</h2><br>
+        <div class="form-group">
+            <label>Ajouter une nouvelle specialite</label><br>
+            Numero : <input type="number" id="ajouteIdSpecialite">
+            Nom : <input type="text" id="ajouteNomSpecialite">
+            <input type="button" id="ajouteSpecialite" value="Ajouter" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Supprimer une specialité par son numéro</label><br>
+            Numero : <input type="number" id="supprimeIdSpecialite">
+            <input type="button" id="supprimeSpecialite" value="Supprimer" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Afficher tous les specialites</label>
+            <input type="button" id="findAllSpecialite" value="Rechercher" class="btn btn-primary btn-sm" />
+        </div>
+        <ul class="list-group" id="listSpecialite"></ul>
+        <br>
+        <div class="form-group">
+            <label>Rechercher les etudiants dans une specialite</label><br>
+            Specialite :<select id="selectSpecialite"></select>
+            <input type="button" id="findEtudiantBySpecialite" value="Rechercher" class="btn btn-primary btn-sm" />
+        </div>
+        <ul class="list-group" id="listEtudiant"></ul>
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Application.js"></script>
+</body>
+</html>

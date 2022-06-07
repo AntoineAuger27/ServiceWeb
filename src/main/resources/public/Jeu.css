@@ -1,0 +1,59 @@
+body{
+	background-color:#202020;
+	color:white;
+}
+
+#page {
+	text-align:left;
+	width:60%;
+	padding:20px;
+	height:450px;
+}
+
+#motrecherche {
+	margin:30px 0 0 0;
+	clear:both;
+	top:80px;
+}
+
+#motrecherche td {
+	padding:10px;
+	background-color:lightBlue;
+	border:2px inset black;
+	width:30px;
+	height:30px;
+	font-weight:bold;
+	text-align:center;
+}
+
+ #motrecherche p{
+	visibility:hidden;
+}
+
+#clavier{
+	padding:10px;
+	background-color:bleue;
+}
+
+#clavier td {
+	background-color:white;
+	border:5px black;
+	width:45px;
+	height:45px;
+	text-align:center;
+	font-weight:bold;
+	cursor:pointer;
+	color:black;
+}
+
+a.lien{
+	color:blue;
+	text-decoration:none;
+	font-size:20px;
+}
+
+a.lien:hover{
+	color:red;
+	font-weight:bold;
+	text-decoration:underline;
+}

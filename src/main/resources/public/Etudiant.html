@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel=Stylesheet href=Application.css>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Administration</title>
+</head>
+<body>
+<div id="page">
+    <h1>
+        <img src="Accueil.png">
+        <button onclick="Jour()">Jour</button>
+        <button onclick="Nuit()">Nuit</button>
+    </h1>
+    <h1>Site de l'administration</h1>
+    <a class="lien" href="Accueil.html">Retourner à l'Accueil</a><br>
+    <div id="navigation">
+        <h2>Gestion des etudiants</h2><br>
+        <div class="form-group">
+            <label>Ajouter un nouvel etudiant</label><br>
+            Numero : <input type="number" id="ajouteIdEtudiant">
+            Nom : <input type="text" id="ajouteNomEtudiant"><br>
+            Prenom : <input type="text" id="ajoutePrenomEtudiant">
+            Ages : <input type="number" id="ajouteAge">
+            Specialite :<select id="selectSpecialite"></select>
+            <input type="button" id="ajouteEtudiant" value="Ajouter" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Supprimer un etudiant par son numéro</label><br>
+            Numero : <input type="number" id="supprimeIdEtudiant">
+            <input type="button" id="supprimeEtudiant" value="Supprimer" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Afficher tous les étudiants</label>
+            <input type="button" id="findAllEtudiant" value="Rechercher" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Rechercher un etudiant par son numéro</label><br>
+            Numero : <input type="number" id="rechercheIdEtudiant">
+            <input type="button" id="findEtudiantbyIdEtudiant" value="Rechercher" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Rechercher un etudiant par son nom et prenom</label><br>
+            Nom : <input type="text" id="rechercheNomEtudiant">
+            Prenom : <input type="text" id="recherchePrenomEtudiant">
+            <input type="button" id="findEtudiantbyNomEtudiantAndPrenomEtudiant" value="Rechercher" class="btn btn-primary btn-sm" />
+        </div>
+        <br>
+        <ul class="list-group" id="listEtudiant"></ul>
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Application.js"></script>
+</body>
+</html>
